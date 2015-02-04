@@ -19,3 +19,6 @@ setup.cfg
 
 # Database
 database.sqlite
+
+# Local settings
+pynamtest/settings/local.py
