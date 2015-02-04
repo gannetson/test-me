@@ -5,7 +5,10 @@
     <h2>Users</h2>
     <ul>
         {% for user in object_list %}
-            <li>{{user.full_name}} <i>{{user.email}}</i></li>
+            <li>
+                <b>{{user.full_name}}</b>
+                <i>{{user.email}}</i>
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}

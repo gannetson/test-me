@@ -8,7 +8,7 @@ class SeleniumTestCase(LiveServerTestCase):
     def setUp(self):
         if settings.SELENIUM_DRIVER == 'Firefox':
             self.browser = webdriver.Firefox()
-        if settings.SELENIUM_DRIVER == 'Chrome':
+        elif settings.SELENIUM_DRIVER == 'Chrome':
             self.browser = webdriver.Chrome()
         else:
             raise Exception("Please specify SELENIUM_DRIVER='Chrome' (or Firefox) in your local.py.")

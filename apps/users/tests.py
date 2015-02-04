@@ -2,8 +2,6 @@ from pynamtest.tests import SeleniumTestCase
 from django.test import TestCase
 from django.utils.unittest.case import skipIf
 from apps.users.factories import UserFactory
-from apps.users.models import User
-from selenium import webdriver
 from django.conf import settings
 
 
@@ -16,12 +14,19 @@ class UserTests(TestCase):
 
 class LiveUserTests(SeleniumTestCase):
 
+    def setUp(self):
+        super(LiveUserTests, self).setUp()
+        self.user = UserFactory.create()
+        self.user.save()
+
     def visit_page(self, path):
         url = '%s%s' % (self.live_server_url,  path)
         return self.browser.get(url)
 
     @skipIf(not settings.SELENIUM_TESTS_ENABLED, 'Selenium tests skipped by config.')
     def test_user_list(self):
-        response = self.visit_page('/users/')
-        li = self.browser.find_element_by_tag_name('li')
-        self.assertEqual(li.text, 'Django Reinhardt')
+        self.visit_page('/users/')
+        name = self.browser.find_element_by_css_selector('li b')
+        email = self.browser.find_element_by_css_selector('li i')
+        self.assertEqual(name.text, self.user.get_full_name())
+        self.assertEqual(email.text, self.user.email)

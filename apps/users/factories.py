@@ -8,4 +8,6 @@ class UserFactory(factory.Factory):
     first_name = factory.Sequence(lambda n: 'John_{0}'.format(n))
     last_name = 'Doe'
 
-    username = factory.Sequence(lambda n: 'john_{0}@doe.org'.format(n))
+    email = factory.Sequence(lambda n: 'john_{0}@doe.org'.format(n))
+    username = factory.Sequence(lambda n: 'john_{0}'.format(n))
+    is_active = True
