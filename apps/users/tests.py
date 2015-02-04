@@ -14,7 +14,7 @@ class LiveUserTests(LiveServerTestCase):
 
     def setUp(self):
         User.objects.create(first_name='Django', last_name='Reinhardt', username='django')
-        self.browser = webdriver.Firefox()
+        self.browser = webdriver.Chrome()
         super(LiveUserTests, self).setUp()
 
     def tearDown(self):
