@@ -1,0 +1,17 @@
+language: python
+cache:
+  bundler: true
+  directories:
+  - $HOME/.pip-cache/
+  - frontend/node_modules
+python:
+- '2.7'
+addons:
+  firefox: '34.0'
+env:
+  matrix:
+  - DJANGO=django==1.6.8 DJANGO_SETTINGS_MODULE="reef.settings.test_runner"
+install:
+- pip install -r requirements.txt
+script:
+- python ./manage.py test --settings=pynamtest.settings.travis -v3

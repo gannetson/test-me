@@ -159,5 +159,7 @@ DATABASES = {
     }
 }
 
+SELENIUM_TESTS_ENABLED = True
+SELENIUM_DRIVER = 'Chrome'
 
 
