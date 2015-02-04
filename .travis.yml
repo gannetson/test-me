@@ -1,16 +1,12 @@
 language: python
-cache:
-  bundler: true
-  directories:
-  - $HOME/.pip-cache/
-  - frontend/node_modules
 python:
 - '2.7'
 addons:
-  firefox: '34.0'
+  firefox: '30.0'
 env:
   matrix:
-  - DJANGO=django==1.6.8 DJANGO_SETTINGS_MODULE="reef.settings.test_runner"
+  - DJANGO=django==1.6.8"
+  - DJANGO=django==1.7.9"
 install:
 - pip install -r requirements.txt
 script:
