@@ -2,6 +2,7 @@ from django.test import TestCase, LiveServerTestCase
 from apps.users.factories import UserFactory
 from apps.users.models import User
 from selenium import webdriver
+import time
 
 class UserTests(TestCase):
 
@@ -26,5 +27,6 @@ class LiveUserTests(LiveServerTestCase):
 
     def test_user_list(self):
         response = self.visit_page('/users/')
+        time.sleep(30)
         li = self.browser.find_element_by_tag_name('li')
         self.assertEqual(li.text, 'Django Reinhardt')
