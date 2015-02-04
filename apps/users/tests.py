@@ -27,6 +27,5 @@ class LiveUserTests(LiveServerTestCase):
 
     def test_user_list(self):
         response = self.visit_page('/users/')
-        time.sleep(30)
         li = self.browser.find_element_by_tag_name('li')
         self.assertEqual(li.text, 'Django Reinhardt')
