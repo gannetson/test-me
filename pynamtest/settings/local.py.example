@@ -1,0 +1,7 @@
+from .base import *
+
+
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = 'SomeBigRandomKey'
+
+SELENIUM_TESTS_ENABLED = True
