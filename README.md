@@ -1,6 +1,10 @@
 # test-me
 Python Africa - Django Testing Workshop
 
+Make sure you get Chromedriver and put it in your PATH
+
+http://chromedriver.storage.googleapis.com/index.html
+
 After you cloned this repository:
 
 ```
