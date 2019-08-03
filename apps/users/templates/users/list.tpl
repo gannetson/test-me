@@ -15,8 +15,8 @@
         <tbody>
             {% for user in object_list %}
                 <tr class="{% cycle 'table-primary' 'table-secondary' %}>">
-                    <td>{{user.full_name}}</td>
-                    <td>{{user.email}}</td>
+                    <td class="name">{{user.full_name}}</td>
+                    <td class="email">{{user.email}}</td>
                 </tr>
             {% endfor %}
         </tbody>

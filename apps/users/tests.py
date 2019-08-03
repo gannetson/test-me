@@ -53,7 +53,7 @@ class LiveUserTests(SeleniumTestCase):
     @skipIf(not settings.SELENIUM_TESTS_ENABLED, 'Selenium tests skipped by config.')
     def test_user_list(self):
         self.visit_page('/users/')
-        name = self.browser.find_element_by_css_selector('li b')
-        email = self.browser.find_element_by_css_selector('li i')
+        name = self.browser.find_element_by_css_selector('td.name')
+        email = self.browser.find_element_by_css_selector('td.email')
         self.assertEqual(name.text, self.user.get_full_name())
         self.assertEqual(email.text, 'test@example.com')
