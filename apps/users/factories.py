@@ -2,12 +2,16 @@ import factory
 from apps.users.models import User
 
 
-class UserFactory(factory.Factory):
-    FACTORY_FOR = User
+class UserFactory(factory.DjangoModelFactory):
 
-    first_name = factory.Sequence(lambda n: 'John_{0}'.format(n))
-    last_name = 'Doe'
+    class Meta:
+        model = User
 
-    email = factory.Sequence(lambda n: 'john_{0}@doe.org'.format(n))
-    username = factory.Sequence(lambda n: 'john_{0}'.format(n))
+    first_name = factory.Faker('first_name')
+    last_name = factory.Faker('last_name')
+
+    email = factory.Faker('email')
+    username = factory.Faker('user_name')
     is_active = True
+    is_superuser = False
+    is_staff = False
