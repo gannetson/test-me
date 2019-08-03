@@ -1,6 +1,6 @@
 import os
 
-# Django settings for pynamtest project.
+# Django settings for test-me project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -21,7 +21,7 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Africa/Accra'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -92,10 +92,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'pynamtest.urls'
+ROOT_URLCONF = 'testme.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'pynamtest.wsgi.application'
+WSGI_APPLICATION = 'testme.wsgi.application'
 
 PROJECT_ROOT = os.path.dirname(os.path.normpath(os.path.join(__file__, '..', '..')))
 
@@ -161,5 +161,8 @@ DATABASES = {
 
 SELENIUM_TESTS_ENABLED = True
 SELENIUM_DRIVER = 'Chrome'
+SECRET_KEY = 'SomeBigRandomKey'
+
+
 
 
