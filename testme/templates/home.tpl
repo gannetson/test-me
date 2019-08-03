@@ -1,7 +1,8 @@
 {% extends 'base.tpl' %}
 
+{% block header %}
+    <h1>Welcome</h1>
+{% endblock %}
 {% block content %}
-    <a href="{% url 'user_list' %}">Users</a>
-    <a href="{% url 'ticket_list' %}">Tickets</a>
-
+    Start testing
 {% endblock %}
