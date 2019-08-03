@@ -1,5 +1,5 @@
-# pynamtest
-Python Namibia - Django Testing Workshop
+# test-me
+Python Africa - Django Testing Workshop
 
 After you cloned this repository:
 
